@@ -1,0 +1,15 @@
+.clearfix {
+  clear: both;
+}
+#GameForm .state-selector label {
+  display: inline-block;
+  border: 1px solid #e1e1e1;
+  padding: 5px 10px;
+}
+#GameForm .state-selector label:not(:last-child) {
+  margin-right: 10px;
+}
+.games-list-table img {
+  max-width: 100px;
+  max-height: 100px;
+}

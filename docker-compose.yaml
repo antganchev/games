@@ -1,0 +1,23 @@
+version: '3.1'
+services:
+  web:
+    build:
+      context: ./dockerfiles
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/var/www/html
+    ports:
+      - "8083:80"
+    depends_on:
+      - db
+  db:
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: alphawin
+      MYSQL_USER: alphawin
+      MYSQL_PASSWORD: alphawin
+      MYSQL_DATABASE: alphawin
+    volumes:
+      - ./dockerfiles/import.sql:/docker-entrypoint-initdb.d/import.sql
+networks:
+  alphawin:
